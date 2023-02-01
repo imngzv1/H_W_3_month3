@@ -1,59 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/edit_bacitem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
-        android:background="@drawable/edit_bacitem">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/car_image"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:id="@+id/car_image"
             android:layout_marginHorizontal="20dp"
             android:layout_marginVertical="10dp"
+            android:src="@drawable/ic_launcher_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_launcher_background"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
+            android:id="@+id/txt_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Name"
-            android:background="@drawable/edit_txt"
-            app:layout_constraintStart_toEndOf="@id/car_image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="20dp"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_txt"
+            android:text="Name"
             android:textSize="40dp"
-            android:id="@+id/txt_name"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/car_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
+            android:id="@+id/txt_name2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Name"
-            android:background="@drawable/edit_txt"
-            app:layout_constraintStart_toEndOf="@id/car_image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_name"
-            android:layout_marginTop="20dp"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_txt"
+            android:text="Name"
             android:textSize="40dp"
-            android:id="@+id/txt_name2"/>
-
-
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/car_image"
+            app:layout_constraintTop_toBottomOf="@id/txt_name" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

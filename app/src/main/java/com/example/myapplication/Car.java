@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
-public class Car {
+import java.io.Serializable;
+
+public class Car implements Serializable {
     public String name;
     public String desk;
     public int image;

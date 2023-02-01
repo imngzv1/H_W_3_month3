@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +14,11 @@ import java.util.ArrayList;
 
 public class AdapterCar extends RecyclerView.Adapter<CarViewHolder> {
     ArrayList<Car> arrayListName;
+    OnItemClick onItemClick;
 
-    public AdapterCar(ArrayList<Car> arrayList) {
-        this.arrayListName = arrayList;
+    public AdapterCar(ArrayList<Car> arrayListName, OnItemClick onItemClick) {
+        this.arrayListName = arrayListName;
+        this.onItemClick = onItemClick;
     }
 
     @NonNull
@@ -25,8 +28,14 @@ public class AdapterCar extends RecyclerView.Adapter<CarViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CarViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CarViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.onBind(arrayListName.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClick.onClick(arrayListName.get(position));
+            }
+        });
     }
 
     @Override

@@ -3,11 +3,12 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnItemClick{
 
     RecyclerView recyclerView;
     AdapterCar adapterCar;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initRecycler() {
-        adapterCar= new AdapterCar(arrayList);
+        adapterCar= new AdapterCar(arrayList,this);
         recyclerView.setAdapter(adapterCar);
     }
 
@@ -43,5 +44,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    @Override
+    public void onClick(Car car) {
+       Intent intent = new Intent(this,DetaillActivity.class);
+       intent.putExtra("car",car);
+       startActivity(intent);
+    }
 }
